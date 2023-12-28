@@ -1,0 +1,12 @@
+# sentinel.yaml
+
+flowRules:
+    resource: get_user
+    threshold: 5
+    controlBehavior: REJECT
+    TokenCalculateStrategy: DIRECT
+metric:
+  # 每隔 1 秒统计一次
+  intervalMs: 1000
+  # 统计窗口的桶数量
+  sampleCount: 1

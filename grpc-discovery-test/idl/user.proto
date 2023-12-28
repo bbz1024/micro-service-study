@@ -1,0 +1,20 @@
+//指定proto文件的语法版本
+syntax = "proto3";
+option go_package = "grpc-temp/rpc/user;user";
+import "goods.proto";
+// 消息 传输的对象
+message UserRequest {
+  int64 id = 1;
+
+}
+message UserResponse {
+  string name = 2;
+  int32 age = 3;
+  GoodsResponse goods = 4;
+}
+service UserService {
+
+  rpc GetUser(UserRequest) returns (UserResponse);
+}
+
+

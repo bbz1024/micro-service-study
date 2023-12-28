@@ -1,0 +1,19 @@
+//指定proto文件的语法版本
+syntax = "proto3";
+//option go_package = "path;name";path 表示生成的go文件存放的路径,会自动创建命目录，name表示生成的go文件的包名(name不写默认为proto文件的包名)
+option go_package = "../rpc/user;user";
+// 消息 传输的对象
+message UserRequest {
+  int64 id = 1;
+
+}
+message UserResponse {
+  string name = 2;
+  int32 age = 3;
+}
+service UserService {
+
+  rpc GetUser(UserRequest) returns (UserResponse);
+}
+
+
