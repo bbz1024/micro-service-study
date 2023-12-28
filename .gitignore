@@ -21,9 +21,10 @@
 # Go workspace file
 go.work
 
-test
-service
-protofile
-mid-svr
+/test
+/service
+/protofile
+/mid-svr
 cert
-client
+/client
+grpc_server.go
