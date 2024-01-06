@@ -1,0 +1,19 @@
+//指定proto文件的语法版本
+syntax = "proto3";
+package pay;
+option go_package = "grpc-dtm-test/rpc/pay;pay";
+
+// 消息 传输的对象
+message PayRequest {
+  int64 user_id = 1;
+  int64 price = 2;
+
+}
+message PayResponse {
+}
+service PayService {
+  rpc Pay(PayRequest) returns (PayResponse);
+  rpc PayRevert(PayRequest) returns (PayResponse);
+}
+
+

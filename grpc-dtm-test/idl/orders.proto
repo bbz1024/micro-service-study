@@ -1,0 +1,26 @@
+//指定proto文件的语法版本
+syntax = "proto3";
+package orders;
+option go_package = "grpc-dtm-test/rpc/orders;orders";
+// 消息 传输的对象
+message OrdersRequest {
+
+  int32 id = 1;
+  int64 amount = 2;
+  int32 userId = 3;
+
+}
+message OrdersResponse {
+
+}
+service OrdersService {
+
+  rpc Create(OrdersRequest) returns (OrdersResponse);
+  rpc CreateRevert(OrdersRequest) returns (OrdersResponse);
+}
+
+
+
+
+//-I ./grpc-temp/idl 指定 Protocol Buffers 编译器在哪里查找额外的 .proto 文件和导入语句。
+//protoc -I ./grpc-dtm-test/idl ./grpc-dtm-test/idl/*.proto --go_out=./ --go-grpc_out=./ //需到当前项目的同级目录下执行
