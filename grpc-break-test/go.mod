@@ -1,6 +1,6 @@
 module grpc-breake-test
 
-go 1.21.3
+go 1.20
 
 require (
 	github.com/alibaba/sentinel-golang v1.0.4

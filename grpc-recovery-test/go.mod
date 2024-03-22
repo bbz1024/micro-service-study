@@ -1,6 +1,6 @@
 module grpc-recovery-test
 
-go 1.21.3
+go 1.20
 
 require (
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.1

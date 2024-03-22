@@ -1,6 +1,6 @@
 module grpc-prometheus-test
 
-go 1.21.3
+go 1.20
 
 require (
 	github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus v1.0.0
